@@ -23,6 +23,12 @@ package "openvpn" do
   action :install
 end
 
+directory "/etc/openvpn/easy-rsa" do
+  owner "root"
+  group "root"
+  mode 0755
+end
+
 directory "/etc/openvpn" do
   owner "root"
   group "root"
@@ -34,4 +40,9 @@ template "/etc/openvpn/server.conf" do
   group "root"
   mode 0644
   source "server.conf.erb"
+  notifies :restart, "service[openvpn]"
+end
+
+service "openvpn" do
+  action [:enable, :start]
 end
