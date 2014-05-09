@@ -56,5 +56,5 @@ end
 include_recipe "iptables"
 
 iptables_rule "openvpn" do
-  source "openvpn.erb"
+  source "iptables/openvpn.erb"
 end
