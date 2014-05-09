@@ -4,8 +4,10 @@ Cookbook to set up an OpenVPN server on Amazon VPCs.
 
 ## Requirements
 
-Only tested on Ubuntu 14.04, but should work on earlier versions. Depends on [cookbook-nat](https://github.com/Soliah/cookbook-nat) to setup
-the IP forwarding and masqueraading.
+Only tested on Ubuntu 14.04, but should work on earlier versions. Depends on
+[iptables](https://github.com/opscode-cookbooks/iptables) and
+[sysctl](https://github.com/onehealth-cookbooks/sysctl) to setup the IP
+forwarding and masqueraading.
 
 ## Attributes
 
