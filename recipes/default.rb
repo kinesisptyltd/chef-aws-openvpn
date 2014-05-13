@@ -53,6 +53,18 @@ sysctl_param "net.ipv4.ip_forward" do
   value 1
 end
 
+sysctl_param "net.ipv4.conf.default.rp_filter" do
+  value 1
+end
+
+sysctl_param "net.ipv4.conf.default.accept_source_route" do
+  value 0
+end
+
+sysctl_params "net.ipv4.tcp_syncookies" do
+  value 1
+end
+
 include_recipe "iptables"
 
 iptables_rule "openvpn" do
