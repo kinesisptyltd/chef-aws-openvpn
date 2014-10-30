@@ -63,6 +63,6 @@ execute "Disable Source/Dest. check" do
     aws ec2 --region "#{instance_region}" \
       modify-instance-attribute \
       --instance-id "#{instance_id}" \
-      --source-dest-check false
+      --no-source-dest-check
   EOH
 end
