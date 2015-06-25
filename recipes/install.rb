@@ -12,7 +12,7 @@ end
   aws_s3_file "/etc/openvpn/#{file}" do
     bucket node["openvpn"]["bucket"]
     region node["ec2"]["placement_availability_zone"].chop
-    remote_path "#{node["openvpn"]["bucket_path"]}#{file}"
+    remote_path "#{node["openvpn"]["bucket_path"]}/#{file}"
   end
 end
 

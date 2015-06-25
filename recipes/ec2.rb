@@ -63,7 +63,7 @@ route_tables.each do |route_table|
   end
 end
 
-ec2.associate_address(
+ec2_old_client.associate_address(
   instance_id: node["ec2"]["instance_id"],
   allocation_id: node["openvpn"]["eip_id"],
   allow_reassociation: true

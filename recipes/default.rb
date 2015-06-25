@@ -37,6 +37,6 @@
 # limitations under the License.
 
 include_recipe "aws"
+include_recipe "aws-openvpn::install"
 include_recipe "aws-openvpn::network"
 include_recipe "aws-openvpn::ec2"
-include_recipe "aws-openvpn::install"
