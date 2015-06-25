@@ -39,3 +39,6 @@ default[:openvpn][:compression] = true
 default[:openvpn][:keep_alive][:enabled] = true
 default[:openvpn][:keep_alive][:timeout] = 120
 default[:openvpn][:keep_alive][:repeat] = 10
+
+default[:openvpn][:bucket] = nil
+default[:openvpn][:bucket_path] = ""
