@@ -6,23 +6,9 @@ Cookbook to set up an OpenVPN server on Amazon VPCs.
 
 Only tested on Ubuntu 14.04, but should work on earlier versions. Depends on
 [sysctl](https://github.com/onehealth-cookbooks/sysctl) to setup the IP
-forwarding.
-
-Note that this doesn't setup IP Masquerading, so a route will need to be added to
-the private subnet's route table.
-
-## Attributes
-
-### openvpn::default
-
-Key                    | Type   | Description
-:----------------------|--------|----------------------------------------------------------
+forwarding and iptables to setup IP masquerading.
 
 ## Usage
-
-Because the goal is to have this work on AWS, we won't be storing the keys and certs in the conventional spot of `/etc/openvpn/keys`. Rather, this path will be
-a symlink to `/data/openvpn/pki`. Futhermore `/etc/openvpn/config` will symlink to `/data/openvpn/config`. There should then be an EBS volume mounted to `/data`
-with the appropriate configuration and keys. We do this to allow for the OpenVPN instance to be torn down and brought back up easily.
 
 Include `openvpn` in your node's `run_list`:
 
@@ -36,7 +22,7 @@ Include `openvpn` in your node's `run_list`:
 
 ## License
 
-    Copyright 2014 Christopher Chow
+    Copyright (C) 2015 Kinesis Pty Ltd
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
