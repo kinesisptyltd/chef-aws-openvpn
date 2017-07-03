@@ -1,3 +1,11 @@
+apt_repository "openvpn" do
+  uri          "http://build.openvpn.net/debian/openvpn/release/2.4"
+  arch         "amd64"
+  distribution "trusty"
+  components   ["main"]
+  key          "https://swupdate.openvpn.net/repos/repo-public.gpg"
+end
+
 package "openvpn" do
   action :install
 end
