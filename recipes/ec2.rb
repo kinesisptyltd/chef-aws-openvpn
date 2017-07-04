@@ -30,7 +30,7 @@ raise "Could not determine instance #{node["ec2"]["instance_id"]}'s VPC ID. Are 
 
 # Find all subnets excluding main.
 subnets = ec2.subnets(filters: [
-  { name: "availability-zone", values: [node["ec2"]["placement_availability_zone"]] },
+  { name: "availability-zone", values: ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"] },
   { name: "vpc-id", values: [instance.vpc_id] },
   { name: "state", values: ["available"] },
   { name: "tag:network", values: ["public", "private"] }

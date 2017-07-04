@@ -10,6 +10,8 @@ cert <%= node[:openvpn][:server_cert] %>
 key <%= node[:openvpn][:server_key] %>
 dh <%= node[:openvpn][:dh] %>
 crl-verify <%= node[:openvpn][:crl] %>
+tls-auth <%= node[:openvpn][:tls_auth_key] %> 0
+tls-cipher <%= node[:openvpn][:tls_cipher] %>
 
 <% node[:openvpn][:routes].each do |route| %>
 push "<%= route %>"
@@ -21,6 +23,13 @@ keepalive <%= node[:openvpn][:keep_alive][:repeat] %> <%= node[:openvpn][:keep_a
 
 <% if node[:openvpn][:compression] %>
 comp-lzo
+<% end %>
+
+<% if node[:openvpn][:data_channel_cipher] %>
+cipher <%= node[:openvpn][:data_channel_cipher] %>
+<% end %>
+<% if node[:openvpn][:data_channel_auth_digest] %>
+auth <%= node[:openvpn][:data_channel_auth_digest] %>
 <% end %>
 
 log-append <%= node[:openvpn][:log] %>

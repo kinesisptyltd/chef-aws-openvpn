@@ -30,11 +30,15 @@ default[:openvpn][:server_cert] = "/etc/openvpn/server.crt"
 default[:openvpn][:server_key] = "/etc/openvpn/server.key"
 default[:openvpn][:crl] = "/etc/openvpn/crl.pem"
 default[:openvpn][:dh] = "/etc/openvpn/dh.pem"
+default[:openvpn][:tls_auth_key] = "/etc/openvpn/ta.key"
+default[:openvpn][:tls_cipher] = "TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA256:TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA:TLS-DHE-RSA-WITH-AES-128-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA"
 
 default[:openvpn][:log] = "/var/log/openvpn.log"
 default[:openvpn][:log_level] = 4
 
-default[:openvpn][:compression] = true
+default[:openvpn][:data_channel_cipher] = "AES-256-CBC"
+default[:openvpn][:data_channel_auth_digest] = "SHA512"
+default[:openvpn][:compression] = false
 
 default[:openvpn][:keep_alive][:enabled] = true
 default[:openvpn][:keep_alive][:timeout] = 120

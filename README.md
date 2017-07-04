@@ -1,4 +1,4 @@
-# cookbook-openvpn
+# chef-aws-openvpn
 
 Cookbook to set up an OpenVPN server on Amazon VPCs.
 
